@@ -222,3 +222,44 @@ HTML에 script 태그를 사용 -> import Module from ./module로 변함
     }).then(message3 => {
         console.log(message3)
     })
+    
+# 배열 추가, 삭제 함수
+배열 추가 함수 - Array.push(), Array.unshift(), Array.splice()
+
+Array.push()
+
+    let arr = ['a', 'b', 'c'];
+    arr.push('d');
+    // arr = ['a', 'b', 'c', 'd'] 배열의 끝에 요소를 추가
+
+Array.unshift()
+
+    let arr = ['a', 'b', 'c'];
+    arr.unshift('d');
+    // arr = ['d', 'a', 'b', 'c'] 배열의 가장 앞에 요소를 추가
+
+Array.splice(start, deleteCount, el)
+
+    let arr = ['a', 'b', 'c'];
+    arr.splice(2, 0, 'd');
+    // arr = ['a', 'b', 'd', 'c']
+
+배열 삭제 함수 - Array.pop(), Array.shift(), Array.splice()
+
+Array.pop()
+
+    let arr = ['a', 'b', 'c', 'e'];
+    arr.pop();
+    // arr = ['a', 'b', 'c']; 배열의 마지막 요소를 제거
+
+Array.shift()
+
+    let arr = ['a', 'b', 'c', 'd'];
+    arr.shift();
+    // arr = ['b', 'c', 'd'] 배열의 가장 앞에 있는 요소를 제거
+
+Array.splice()
+
+    let arr = ['a', 'b', 'c', 'd'];
+    arr.splice(2, 1);
+    // arr = ['a', 'b', 'd'] 인덱스 2부터 1개의 요소를 제거
