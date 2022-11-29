@@ -4,6 +4,10 @@
 https://codechacha.com/ko/javascript-input-alphabet-number-hangul/ <br>
 <br>2차원 배열 sort()<br>
 https://ywtechit.tistory.com/269<br>
+<br>sort() 동작 방식 설명<br>
+https://noirstar.tistory.com/359<br>
+<br>slice()와 splice()의 차이<br>
+https://im-developer.tistory.com/103<br>
 <br>Array.includes<br>
 https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/includes<br>
 <br>배열 추가, 삭제 <br>
@@ -15,4 +19,4 @@ https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=diceworld&lo
 <br>제스트 Matcher<br>
 https://www.daleseo.com/jest-basic/<br>https://seungtaek-overflow.tistory.com/12<br>
 <br>커밋 메시지<br>
-https://beomseok95.tistory.com/328
+https://beomseok95.tistory.com/328<br>
