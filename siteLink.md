@@ -20,3 +20,7 @@ https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=diceworld&lo
 https://www.daleseo.com/jest-basic/<br>https://seungtaek-overflow.tistory.com/12<br>
 <br>커밋 메시지<br>
 https://beomseok95.tistory.com/328<br>
+<br>소수 알고리즘<br>
+https://myjamong.tistory.com/139<br>
+<br>순열 알고리즘<br>
+https://jun-choi-4928.medium.com/javascript%EB%A1%9C-%EC%88%9C%EC%97%B4%EA%B3%BC-%EC%A1%B0%ED%95%A9-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EA%B5%AC%ED%98%84%ED%95%98%EA%B8%B0-21df4b536349<br>
