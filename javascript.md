@@ -1,9 +1,9 @@
 # 템플릿 문자열
 
-    var string1 = '안녕하세요';   
-    var string2 = '반갑습니다';   
-    console.log(string1 + ' '+ string2)   
-    console.log(`${string1} ${string2}`)   
+    var string1 = '안녕하세요';
+    var string2 = '반갑습니다';
+    console.log(string1 + ' '+ string2)
+    console.log(`${string1} ${string2}`)
 
     var product = { name: '도서', price: "3000원" }
     console.log('제품 '+product.name+'의 가격은 '+product.price+'입니다')
@@ -14,6 +14,7 @@
     console.log(`두 값을 더한 값은 ${value1+value2}입니다`)
 
 # 전개 연산자
+
     var array1 = ['one', 'two']
     var array2 = ['three', 'four']
     var array3 = array1.concat(array2)
@@ -24,6 +25,7 @@
     const(변수), let(상수)
 
 # if. 조건문
+
     const a = 3;
     if(a + 1 == 2){
     console.log("True")
@@ -36,6 +38,7 @@
     }
 
 # switch. 조건문
+
     const device = 'iphone'
 
      switch(device){
@@ -51,6 +54,7 @@
     }
 
 # for. 반복문
+
     for(let i=0; i<5; i++){
     console.log(i)
     }
@@ -81,6 +85,7 @@
     }
 
 # 클래스
+
     function Animal(type, name, sound){
         this.type = type;
         this.name = name;
@@ -105,6 +110,7 @@
     cat.say()
 
 # 화살표 함수
+
     function add1(a, b) {
     return a + b;
     }
@@ -121,9 +127,11 @@
     console.log(add3(2,3));
 
 # 라이브러리 의존성 관리
+
 HTML에 script 태그를 사용 -> import Module from ./module로 변함
 
 # 배열 내장함수
+
     const hero = ['엔트맨', '닥터 스트레인지', '아이언맨']
     for(let i of hero){
       console.log(i)
@@ -152,6 +160,7 @@ HTML에 script 태그를 사용 -> import Module from ./module로 변함
     console.log(result_reduce)
 
 # 비동기 함수
+
     function work() {
     const start = Date.now()
     for (let i = 0; i < 10000000; i++) { }
@@ -222,8 +231,9 @@ HTML에 script 태그를 사용 -> import Module from ./module로 변함
     }).then(message3 => {
         console.log(message3)
     })
-    
+
 # 배열 추가, 삭제 함수
+
 배열 추가 함수 - Array.push(), Array.unshift(), Array.splice()
 
 Array.push()
@@ -263,3 +273,10 @@ Array.splice()
     let arr = ['a', 'b', 'c', 'd'];
     arr.splice(2, 1);
     // arr = ['a', 'b', 'd'] 인덱스 2부터 1개의 요소를 제거
+
+# 거듭제곱/제곱근 구하기
+
+    거듭제곱
+    Math.pow([대상 숫자], [거듭제곱 횟수]);
+    제곱근
+    Math.sqrt([대상 숫자]);
