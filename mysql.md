@@ -6,3 +6,7 @@
 # 데이터의 갯수 구하기
 
     SELECT count(animal_id) from animal_ins
+
+# 중복된 데이터 없이 조회하기
+
+    SELECT distinct 컬럼 FROM 테이블
