@@ -10,3 +10,7 @@
 # 중복된 데이터 없이 조회하기
 
     SELECT distinct 컬럼 FROM 테이블
+
+# max, min값을 가진 row의 다른 컬럼 값까지 출력하기
+
+    SELECT * FROM 테이블 WHERE 컬럼 = (SELECT MAX(컬럼) FROM 테이블);
