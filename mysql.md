@@ -14,3 +14,11 @@
 # max, min값을 가진 row의 다른 컬럼 값까지 출력하기
 
     SELECT * FROM 테이블 WHERE 컬럼 = (SELECT MAX(컬럼) FROM 테이블);
+
+# 테이블 조회 정렬 ORDER BY
+
+    오름차순
+    SELECT * FROM 테이블 ORDER BY 컬럼 ASC(생략 가능);
+
+    내림차순
+    SELECT * FROM 테이블 ORDER BY 컬럼1 DESC;
