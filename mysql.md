@@ -22,3 +22,18 @@
 
     내림차순
     SELECT * FROM 테이블 ORDER BY 컬럼1 DESC;
+
+# 특정 문자포함 검색 Like
+
+    특정 문자로 시작하는 데이터 검색
+    SELECT 컬럼 FROM 테이블 WHERE 컬럼 LIKE '특정 문자열%';
+
+    특정 문자로 끝나는 데이터 검색
+    SELECT 컬럼 FROM 테이블 WHERE 컬럼 LIKE '%특정 문자열';
+
+    특정 문자를 포함하는 데이터 검색
+    SELECT 컬럼 FROM 테이블 WHERE 컬럼 LIKE '%특정 문자열%';
+
+# NULL 값을 다른 값으로 변환 IFNULL
+
+    SELECT IFNULL(컬럼,'값') FROM 테이블;
