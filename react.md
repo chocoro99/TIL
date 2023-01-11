@@ -238,3 +238,250 @@
           </div>
         );
       }
+
+# styled-components
+
+- CSS in JS 기술을 사용하는 라이브러리로, CSS 파일을 따로 생성해 관리하던 것을 JS에서 CSS 코드를 작성한다
+
+      import styled from "styled-conmponents";
+
+      // <div>생성
+      const Wrapper = styled.div`
+        // css 코드
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+      `;
+      const Title = styled.h1`
+        color: blue;
+      `;
+
+      const App = () => {
+        return(
+          <Wrapper>
+            <Title>styled-components</Title>
+          </Wrapper>
+        );
+      };
+
+# styled-components props 사용
+
+    const Wrapper = styled.div``;
+
+    // 아래와 같은 style이 겹치는 코드에 props를 사용한다
+    const Box1 = styled.div`
+      background-color: blue;
+      width : 100px;
+      height: 100px;
+    `;
+    const Box2 = styled.div`
+      background-color: green;
+      width : 100px;
+      height: 100px;
+    `;
+    const App = () => {
+      return(
+        <Wrapper>
+          <Box1 />
+          <Box2 />
+        </Wrapper>
+      );
+    };
+
+    const Box = styled.div`
+      background-color: ${(props) => props.color};
+      width : 100px;
+      height: 100px;
+    `;
+
+    const App = () => {
+      return(
+        <Wrapper>
+          <Box color="blue" />
+          <Box color="green" />
+        </Wrapper>
+      );
+    };
+
+# styled-components 상속
+
+    const Wrapper = styled.div``;
+
+    // 컴포넌트 상속 받기
+    const Box = styled.div`
+      background-color: blue;
+      width : 100px;
+      height: 100px;
+    `;
+    const Circle = styled(Box)`
+      // Box의 스타일을 받고 추가적인 스타일 추가 가능
+      border-radius: 50%;
+    `;
+    const App = () => {
+      return(
+        <Wrapper>
+          <Box />
+          <Circle />
+        </Wrapper>
+      );
+    };
+
+# styled-components as
+
+    // Box 컴포넌트의 스타일을 사용하고 싶지만 다른 태그로 쓰고 싶을 때 as 사용
+    const Wrapper = styled.div``;
+    const Box = styled.div`;
+      background-color: blue;
+      width : 100px;
+      height: 100px;
+
+     const App = () => {
+      return(
+        <Wrapper>
+          <Box as="input" />
+        </Wrapper>
+      );
+    };
+
+# styled-components attrs
+
+- 컴포넌트에 attributes를 지정한다
+
+      const Wrapper = styled.div``;
+
+      // 이 컴포넌트를 쓰면 required:true가 적용된 상태로 사용된다
+      const Input = styled.input.attrs({ required: true })`
+        background-color: skyblue;
+      `;
+
+      const App = () => {
+      return(
+        <Wrapper>
+        // 몇 개를 사용하든 똑같이 required: true가 적용
+          <Input />
+          <Input />
+          <Input />
+        </Wrapper>
+      );
+
+  };
+
+# styled-components 자식 컴포넌트와 애니메이션
+
+    const Wrapper = styled.div`
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    `;
+
+    // styled-components에서 애니메이션을 사용할 땐 "keyframes"를 사용한다
+    const rotationAnimation = keyframes`
+      0% {
+        transform: rotate(0deg);
+        border-radius: 0px;
+      }
+      50% {
+        transform: rotate(360deg);
+        border-radius: 100px;
+      }
+      100% {
+        transform: rotate(0deg);
+        border-radius: 0px;
+      }
+    `;
+
+    const Text = styled.span``;
+
+    // 애니메이션이 적용 될 컴포넌트
+    const Box = styled.div`
+      width: 200px;
+      height: 200px;
+
+      // props로 background-color 받음
+      background-color: ${(props) => props.color};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      // 위에서 생성한 애니메이션 적용
+      animation: ${rotationAnimation} 5s linear infinite;
+
+      // 부모 컴포넌트에서 자식 컴포넌트에게 적용시킬 style 작성
+      ${Text} {
+        color: white;
+
+        // 자식 컴포넌트에게 hover 적용
+        &:hover {
+          color: yellow;
+          font-size: 80px;
+        }
+      }
+    `;
+
+    const App = () => {
+      return (
+        <Wrapper>
+          // props로 {color : green}을 보냄
+          <Box color="green">
+            // Text는 span 태그지만 as를 사용해 p태그로 사용 중
+            <Text as="p">Hello</Text>
+          </Box>
+        </Wrapper>
+      );
+    };
+
+# styled-components ThemeProvider
+
+- Theme의 정보를 props 형태로 넘길 수가 있다 => 그로인해 공통적인 style 적용이 쉽다
+
+      // index.js
+      import { ThemeProvider } from "styled-components";
+
+      // 두 가지의 Theme
+      const darkTheme = {
+        textColor: "whitesmoke",
+        backgroundColor: "#111",
+      };
+      const lightTheme = {
+        textColor: "#111",
+        backgroundColor: "whitesmoke",
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(
+
+        // props 형태로 theme를 보낸다
+        <ThemeProvider theme={lightTheme}>
+          <App />
+        </ThemeProvider>
+      );
+
+
+      // App.js
+      import styled from "styled-components";
+
+      const Title = styled.h1`
+
+        // 전달 받은 theme에서 textColor(#111)를 사용
+        color: ${(props) => props.theme.textColor};
+      `;
+
+      const Wrapper = styled.div`
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+
+        // 전달 받은 theme의 backgroundColor(whitesmoke)를 사용
+        background-color: ${(props) => props.theme.backgroundColor};
+      `;
+
+      const App = () => {
+        return (
+          <Wrapper>
+            <Title>Hello</Title>
+          </Wrapper>
+        );
+      };
