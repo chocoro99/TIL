@@ -199,6 +199,9 @@
         const check = () => {
           console.log("useEffect 실행")
         }
+        useEffect(check)
+
+        // 만약 빈 배열을 넣으면 한 번만 실행
         useEffect(check, [])
 
         return(
@@ -485,3 +488,31 @@
           </Wrapper>
         );
       };
+
+# useCallBack async/await
+
+    const Detail = () => {
+      const [loading, setLoading] = useState(true);
+      const { id } = useParams();
+      const [movie, setMovie] = useState([]);
+
+      // id의 값이 변경 될 때 실행
+      const getMovie = useCallback(async () => {
+        const json = await (
+          await fetch(`https://yts.mx/api/v2/movie_details.json?movie_id=${id}`)
+        ).json();
+        setLoading(false);
+        setMovie(json.data.movie);
+      }, [id]);
+
+      // getMovie의 변화가 있을 때만 실행
+      useEffect(() => {
+        getMovie();
+      }, [getMovie]);
+
+      return (
+        <div>
+          {loading ? <h1>loading...</h1> : <Movie key={id} movie={movie} />}
+        </div>
+      );
+    };
