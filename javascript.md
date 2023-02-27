@@ -1,17 +1,19 @@
 # 템플릿 문자열
 
-    var string1 = '안녕하세요';
-    var string2 = '반갑습니다';
-    console.log(string1 + ' '+ string2)
-    console.log(`${string1} ${string2}`)
+```js
+var string1 = "안녕하세요";
+var string2 = "반갑습니다";
+console.log(string1 + " " + string2);
+console.log(`${string1} ${string2}`);
 
-    var product = { name: '도서', price: "3000원" }
-    console.log('제품 '+product.name+'의 가격은 '+product.price+'입니다')
-    console.log(`제품 ${product.name}의 가격은 ${product.price}입니다`)
+var product = { name: "도서", price: "3000원" };
+console.log("제품 " + product.name + "의 가격은 " + product.price + "입니다");
+console.log(`제품 ${product.name}의 가격은 ${product.price}입니다`);
 
-    var value1 = 1
-    var value2 = 2
-    console.log(`두 값을 더한 값은 ${value1+value2}입니다`)
+var value1 = 1;
+var value2 = 2;
+console.log(`두 값을 더한 값은 ${value1 + value2}입니다`);
+```
 
 # 전개 연산자
 
